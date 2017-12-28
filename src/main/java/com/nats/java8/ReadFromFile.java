@@ -20,10 +20,10 @@ public class ReadFromFile {
 		 System.out.println(Files.newBufferedReader(Paths.get(filePath)).lines().count());
 //		 Files.newBufferedReader(Paths.get(filePath)).lines().forEach((n)->System.out.println(n));
 		 //Files.newBufferedReader(Paths.get(filePath)).lines().filter(p->p.contains("Nataraja")).forEach((n)->System.out.println(n));
-		 System.out.println(Files.newBufferedReader(Paths.get(filePath)).lines().allMatch(p1));
-		 System.out.println(Files.newBufferedReader(Paths.get(filePath)).lines().anyMatch(p1));
-		 System.out.println(Files.newBufferedReader(Paths.get(filePath)).lines().noneMatch(p1));
-//		 Files.newBufferedReader(Paths.get(filePath)).lines().fl;
+//		 System.out.println(Files.newBufferedReader(Paths.get(filePath)).lines().allMatch(p1));
+//		 System.out.println(Files.newBufferedReader(Paths.get(filePath)).lines().anyMatch(p1));
+//		 System.out.println(Files.newBufferedReader(Paths.get(filePath)).lines().noneMatch(p1));
+//		 Files.newBufferedReader(Paths.get(filePath)).lines().filter(x->x.split("=")[1].contains("Nats")).forEach(System.out::println);
 		
 	}
 

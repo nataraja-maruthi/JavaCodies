@@ -19,29 +19,49 @@ Given "pwwkew", the answer is "wke", with the length of 3. Note that the answer 
 public class LongestSubString {
 	
 	public static void main(String[] args) {
-		System.out.println(new LongestSubString().lengthOfLongestSubstring("dvdf"));
+		System.out.println(new LongestSubString().lengthOfLongestSubstring("abcabc"));
 	}
-	public int lengthOfLongestSubstring(String s) {
-		int length = s.length();
+	
+	public int lengthOfLongestSubstring(String str)
+	{
+		int length = str.length();
+		Set<Character> set = new HashSet<Character>();
 		int result = 0;
-		for (int i = 0; i < length; i++) {
-			for (int j = i+1; j < length; j++) {
-				if (allUnique(s, i, j)) {
-					result = Math.max(result, j-i);
-				}
+		int i =0, j=0;
+		while (i<length && j<length) {
+			if (!set.contains(str.charAt(j))) {
+				set.add(str.charAt(j++));
+				result = Math.max(result, set.size());
+			} else {
+				set.remove(str.charAt(i++));
 			}
-			
 		}
 		return result;
-    } 
+	}
 	
-	public boolean allUnique(String s, int start, int end) {
-        Set<Character> set = new HashSet();
-        for (int i = start; i < end; i++) {
-            Character ch = s.charAt(i);
-            if (set.contains(ch)) return false;
-            set.add(ch);
-        }
-        return true;
-    }
+	
+	
+//	public int lengthOfLongestSubstring(String s) {
+//		int length = s.length();
+//		int result = 0;
+//		for (int i = 0; i < length; i++) {
+//			for (int j = i+1; j < length; j++) {
+//				if (allUnique(s, i, j)) {
+//					result = Math.max(result, j-i);
+//				}
+//			}
+//			
+//		}
+//		return result;
+//    } 
+//	
+//	public boolean allUnique(String s, int start, int end) {
+//        Set<Character> set = new HashSet();
+//        for (int i = start; i < end; i++) {
+//            Character ch = s.charAt(i);
+//            if (set.contains(ch)) return false;
+//            set.add(ch);
+//        }
+//        return true;
+//    }
 }
