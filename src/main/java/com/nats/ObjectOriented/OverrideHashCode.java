@@ -14,6 +14,7 @@ public class OverrideHashCode {
 		System.out.println(s2.hashCode());
 		Map<Student, String> map = new HashMap<Student,String>();
 		map.put(new Student(2022, "Raj"), "Nataraja");
+		map.put(new Student(2022, "Raj"), "Nataraja1");
 		System.out.println(map.get(new Student(2022, "Raj")));
 	}
 }
