@@ -17,6 +17,22 @@ public class BinaryTreeExample {
         return root==null;
     }
 
+    public int traverse(BinaryTree node, int[] array) {
+        if (node == null) {
+            return -1;
+        }
+        BinaryTree temp = node;
+        for (int i = 0;i<array.length;i++) {
+            if (i==0) {
+                temp = temp!=null ? temp.left:null;
+            } else {
+                temp = temp!=null ? temp.right:null;
+            }
+        }
+        return temp!=null ? temp.data:-1;
+
+    }
+
     public void insert(BinaryTree node, int value) {
         if (value <= node.getData()) {
             BinaryTree leftNode = node.getLeftNode();

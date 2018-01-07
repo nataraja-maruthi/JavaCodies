@@ -18,9 +18,6 @@ public class MyHashMap<K,V> {
         System.out.println(map.get("nats1"));
     }
 
-
-
-
     static int capacity = 10;
     List<Node<K,V>> mapList = new ArrayList<>();
 
