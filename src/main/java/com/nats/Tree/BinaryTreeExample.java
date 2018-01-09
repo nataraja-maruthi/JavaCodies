@@ -17,7 +17,7 @@ public class BinaryTreeExample {
         return root==null;
     }
 
-    public int traverse(BinaryTree node, int[] array) {
+    public int traverse01(BinaryTree node, int[] array) {
         if (node == null) {
             return -1;
         }
