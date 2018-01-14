@@ -5,7 +5,7 @@ package com.nats.strings;
  */
 public class CheckPolindromeCanForm {
     public static void main(String[] args) {
-        String str = "aaabbb";
+        String str = "aaabbbcc";
         char[] array = new char[256];
         for (int i=0;i<str.length();i++) {
             array[str.charAt(i)]++;

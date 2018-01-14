@@ -1,5 +1,8 @@
 package com.nats.LinkedList;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Created by nataraja.maruthi on 1/3/18.
  */
@@ -9,20 +12,42 @@ public class BasicLinkedList<T> {
 
     public static void main(String[] args) {
         BasicLinkedList ll = new BasicLinkedList();
-        ll.addNode(10);
-        ll.addNode(20);
-        ll.addNode(30);
-        ll.addNode(40);
-        ll.addNode(50);
-        ll.displayLinkedList();
+        Node node = ll.addNode(10);
+        Node node1 = ll.addNode(20);
+        ll.printReverse(node);
+
+//        ll.displayLinkedList();
 //        ll.addAtPos(1,100);
 //        ll.addAfter(20,100);
 //        ll.displayLinkedList();
 //        ll.removeAtPos(1);
 //        ll.displayLinkedList();
 //        ll.removeAfter(100);
-        ll.reverseLinkedList();
-        ll.displayLinkedList();
+//        ll.reverseLinkedList();
+//        ll.displayLinkedList();
+    }
+
+
+
+    public boolean isLoopDetected(Node<T> head) {
+        Set<Node> set = new HashSet<>();
+        Node temp = head;
+        while (temp!=null) {
+            if (!set.add(temp)) {
+                return true;
+            }
+            temp = temp.getNext();
+        }
+        return false;
+    }
+
+    public void printReverse(Node<T> head){
+        if (head==null) {
+            return;
+        }
+        printReverse(head.getNext());
+        System.out.println(head.getData());
+
     }
 
     public void reverseLinkedList() {
@@ -133,7 +158,7 @@ public class BasicLinkedList<T> {
     }
 
 
-    public void addNode(int data) {
+    public  Node<T> addNode(int data) {
         Node newNode = new Node(data);
         if (head == null) {
             head = newNode;
@@ -142,6 +167,7 @@ public class BasicLinkedList<T> {
             tail.setNext(newNode);
             tail = newNode;
         }
+        return tail;
     }
 
     public void printTail() {
