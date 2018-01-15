@@ -21,6 +21,7 @@ public class PrintLeafNodes {
         }
     }
 
+    static int count = 0;
     public static void main(String[] args) {
         Node root = new Node(10);
         Node node1 = new Node(20);
@@ -39,6 +40,9 @@ public class PrintLeafNodes {
         node6.left = node7;
         traverse(root);
         printLeafNode(root);
+        countLeafNode(root);
+        System.out.println(count);
+
 
     }
 
@@ -68,6 +72,18 @@ public class PrintLeafNodes {
         }
         printLeafNode(node.left);
         printLeafNode(node.right);
+    }
+
+
+    public static void countLeafNode(Node node) {
+        if (null==node) {
+            return;
+        }
+        if (node.left==null && node.right==null) {
+            count++;
+        }
+        countLeafNode(node.left);
+        countLeafNode(node.right);
     }
 
 

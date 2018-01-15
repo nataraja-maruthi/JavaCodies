@@ -84,7 +84,7 @@ public class BinaryTreeExample {
             return false;
         }
 
-        return checkBST(node.getLeftNode(),min,node.getData()-1) ||
+        return checkBST(node.getLeftNode(),min,node.getData()-1) &&
                 checkBST(node.getRightNode(),node.getData()+1 , max);
 
     }
