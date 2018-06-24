@@ -44,6 +44,7 @@ class Stack {
 			return -1;
 		} else {
 			int temp = array[top--];
+			len--;
 			return temp ;
 		}
 		

@@ -30,7 +30,7 @@ public class CollectionEx {
 		
 		empList.stream().forEach(x->x.setEmpId("3333"));
 //		empList.stream().forEach(x->x.getName().stream().distinct().forEach(y->System.out.println(y)));
-		empList.stream().map(x->x.getName()).distinct().collect(Collectors.toList()).forEach(System.out::println);;
+//		empList.stream().map(x->x.getName()).distinct().collect(Collectors.toList()).forEach(System.out::println);;
 	
 		
 	}
@@ -54,6 +54,10 @@ class Employee {
 			this.name = new HashSet<String>();
 		}
 		this.name.add(name);
+	}
+	public void setEmpId(String string) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	

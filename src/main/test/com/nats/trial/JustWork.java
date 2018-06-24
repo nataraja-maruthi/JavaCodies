@@ -3,14 +3,13 @@ package com.nats.trial;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import java.util.TreeSet;
 
 /**
  * Created by nataraja.maruthi on 12/29/17.
  */
 public class JustWork {
     public static void main(String[] args) {
-        Set<Integer> set = new TreeSet<>();
+        Set<Integer> set = new HashSet<>();
         set.add(4);
         set.add(-4);
         set.add(1);

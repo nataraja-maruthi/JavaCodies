@@ -9,7 +9,7 @@ import java.util.Set;
  */
 public class CheckContigousNumbers {
     public static void main(String[] args) {
-        int arr[] = { -10,-8,-6,-4,-2,0,2,3};
+        int arr[] = { -10,-8,-6,-4,-2,0,2};
         int n = arr.length;
         solution1(arr,n);
         solution2(arr,n);

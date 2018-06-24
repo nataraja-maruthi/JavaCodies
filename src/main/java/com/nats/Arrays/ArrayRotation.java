@@ -13,7 +13,9 @@ public class ArrayRotation {
         new ArrayRotation().printArray(array);
         new ArrayRotation().rorateLeftUsingSplit(array,3);
         new ArrayRotation().printArray(array);
-
+        new ArrayRotation().rorateRightUsingSplit(array,3);
+        new ArrayRotation().printArray(array);
+	
     }
 
     public void rotateLeft(int[] array, int n) {

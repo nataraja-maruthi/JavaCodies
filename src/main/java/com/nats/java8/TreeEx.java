@@ -13,9 +13,9 @@ public class TreeEx {
         System.out.println(map.get("Nats"));
 
         TreeSet<Integer> treeSet = new TreeSet<>();
-        treeSet.add(10);
-        treeSet.add(20);
         treeSet.add(30);
+        treeSet.add(20);
+        treeSet.add(10);
         treeSet.forEach(System.out::println);
     }
 }

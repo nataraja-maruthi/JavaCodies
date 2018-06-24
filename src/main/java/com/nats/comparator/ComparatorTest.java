@@ -1,6 +1,7 @@
 package com.nats.comparator;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class ComparatorTest {
 
@@ -12,10 +13,10 @@ public class ComparatorTest {
 		list.add(s1);
 		list.add(s2);
 		list.add(s3);
-//		Collections.sort(list,new NameComparator());
-//		Collections.sort(list,new AgeComparator());
+		Collections.sort(list, new NameComparator());
+		Collections.sort(list,new AgeComparator());
 		list.forEach(x->System.out.println(x.getAge()));
-//		list.stream().sorted(new AgeComparator()).forEach(System.out::println);
-		list.stream().parallel().forEach(System.out::println);
+		list.stream().sorted(new AgeComparator()).forEach(System.out::println);
+//		list.stream().parallel().forEach(System.out::println);
 	}
 }

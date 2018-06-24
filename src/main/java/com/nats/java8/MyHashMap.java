@@ -71,7 +71,7 @@ public class MyHashMap<K,V> {
             Node<K, V> curKvNode = kvNode;
             Node<K,V> prevNode = null;
             while (curKvNode !=null) {
-                if (key.hashCode()==kvNode.key.hashCode()) {
+                if (key.hashCode()==curKvNode.key.hashCode()) {
                     curKvNode.value = value;
                     return;
                 } else {

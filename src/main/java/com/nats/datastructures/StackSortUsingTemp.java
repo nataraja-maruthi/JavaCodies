@@ -20,16 +20,30 @@ public class StackSortUsingTemp {
         System.out.println("final sorted list: "+sortStack(input));
     }
 
+//    private static java.util.Stack<Integer> sortStack(java.util.Stack<Integer> input)
+//    {
+//        java.util.Stack<Integer> tempStack = new Stack<>();
+//        while (!input.isEmpty()) {
+//            Integer temp = input.pop();
+//            while (!tempStack.isEmpty()&& tempStack.peek()>temp) {
+//                input.push(tempStack.pop());
+//            }
+//            tempStack.push(temp);
+//        }
+//        return tempStack;
+//    }
+    
     private static java.util.Stack<Integer> sortStack(java.util.Stack<Integer> input)
     {
-        java.util.Stack<Integer> tempStack = new Stack<>();
-        while (!input.isEmpty()) {
-            Integer temp = input.pop();
-            while (!tempStack.isEmpty()&& tempStack.peek()>temp) {
-                input.push(tempStack.pop());
-            }
-            tempStack.push(temp);
-        }
-        return tempStack;
+    		java.util.Stack<Integer> tempStack = new Stack<>();
+    		while (!input.isEmpty()) {
+    			int temp = input.pop();
+    			while (!tempStack.isEmpty() && temp < tempStack.peek()) {
+					input.push(tempStack.pop());
+				}
+    			tempStack.add(temp);
+				
+			}
+    		return tempStack;
     }
 }
