@@ -54,22 +54,22 @@ public class BinaryTreeExample {
         if (root == null) {
             root  = new BinaryTree(value);
         } else {
-            boolean flag = true;
+            boolean flag = false;
             BinaryTree currentNode = root;
             BinaryTree prevNode;
-            while (flag) {
+            while (!flag) {
                 prevNode = currentNode;
                 if (value<=currentNode.getData()) {
                     currentNode = currentNode.getLeftNode();
                     if (currentNode == null) {
                         prevNode.setLeft(new BinaryTree(value));
-                        flag = false;
+                        flag = true;
                     }
                 } else if (value>currentNode.getData()) {
                     currentNode = currentNode.getRightNode();
                     if (currentNode==null) {
                         prevNode.setRight(new BinaryTree(value));
-                        flag = false;
+                        flag = true;
                     }
                 }
             }

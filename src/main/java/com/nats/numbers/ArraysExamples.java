@@ -12,6 +12,8 @@ public class ArraysExamples {
 //		System.out.println(copyOf);
 		
 		String str  = "01";
+		//48*31+49
+		//0 ASCII 48 * 31 Pow(n-1) + 1's ASCII 49 * 31 pow (n-1)
 		System.out.println(str.hashCode());
 		
 	}

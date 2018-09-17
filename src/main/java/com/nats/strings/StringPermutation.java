@@ -1,47 +1,40 @@
 package com.nats.strings;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class StringPermutation {
 	
 	
 	public static void main(String[] args) {
 //		permutation("ABC",0,2);
-		permutation2("", "ABC");
+		System.out.println(permutationFinder("ABC"));
 	}
 	
-	private static void permutation2(String prefix,String string) {
-		int n = string.length();
-		if (n==0) {
-			System.out.println(prefix);
-		} else {
-			for (int i = 0; i < string.length(); i++) {
-				permutation2(prefix+string.charAt(i), string.substring(0,i)+string.substring(i+1,n));
-			}
-		}
-		
-	}
-
-	private static void permutation(String str, int l, int r)
-    {
-        if (l == r)
-            System.out.println(str);
-        else
-        {
-            for (int i = l; i <= r; i++)
-            {
-                str = swap(str,l,i);
-                permutation(str, l+1, r);               
+	public static Set<String> permutationFinder(String str) {
+        Set<String> perm = new HashSet<String>();
+        //Handling error scenarios
+        if (str == null) {
+            return null;
+        } else if (str.length() == 0) {
+            perm.add("");
+            return perm;
+        }
+        char initial = str.charAt(0); // first character
+        String rem = str.substring(1); // Full string without first character
+        Set<String> words = permutationFinder(rem);
+        for (String strNew : words) {
+            for (int i = 0;i<=strNew.length();i++){
+                perm.add(charInsert(strNew, initial, i));
             }
         }
+        return perm;
     }
 
-	public static String swap(String a, int i, int j)
-    {
-        char temp;
-        char[] charArray = a.toCharArray();
-        temp = charArray[i] ;
-        charArray[i] = charArray[j];
-        charArray[j] = temp;
-        return String.valueOf(charArray);
+    public static String charInsert(String str, char c, int j) {
+        String begin = str.substring(0, j);
+        String end = str.substring(j);
+        return begin + c + end;
     }
 
 }

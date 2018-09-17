@@ -45,8 +45,8 @@ public class FindMaxInTree {
             return 0;
         }
         int res =  root.data;
-        int leftMax = getMaxNodeValue(root.left);
-        int rightMax = getMaxNodeValue(root.right);
+        int leftMax = getMaxNodeValueWithRec(root.left);
+        int rightMax = getMaxNodeValueWithRec(root.right);
         return Math.max(Math.max(leftMax,rightMax),res);
     }
 

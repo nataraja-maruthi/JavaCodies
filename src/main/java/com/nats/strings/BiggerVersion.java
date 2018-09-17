@@ -5,7 +5,7 @@ package com.nats.strings;
  */
 public class BiggerVersion {
     public static void main(String[] args) {
-        System.out.println(getBiggerVersion("1.0.0", "0.01.01"));
+        System.out.println(getBiggerVersion("1.0.0", "1.01.01"));
 
     }
 

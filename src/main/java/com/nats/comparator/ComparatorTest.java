@@ -14,9 +14,10 @@ public class ComparatorTest {
 		list.add(s2);
 		list.add(s3);
 		Collections.sort(list, new NameComparator());
+		list.forEach(x->System.out.println(x.getAge()));
 		Collections.sort(list,new AgeComparator());
 		list.forEach(x->System.out.println(x.getAge()));
-		list.stream().sorted(new AgeComparator()).forEach(System.out::println);
+//		list.stream().sorted(new AgeComparator()).forEach(System.out::println);
 //		list.stream().parallel().forEach(System.out::println);
 	}
 }
